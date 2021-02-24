@@ -17,25 +17,36 @@
       <div v-for="item in picture" :key="item.key" class="list-item">
         <PictureCard
           v-if="item.avaliable && showPictureCard == 2"
+          @click.native="showPictureModal"
           :name="item.name"
           :price="item.price"
         ></PictureCard>
       </div>
+      <PictureModal
+        v-if="showingPictureModal"
+        v-on:close="closePictureModal"
+        :name="picture[0].name"
+        :price="picture[0].price"
+        :describe="picture[0].describe"
+      ></PictureModal>
     </div>
   </div>
 </template>
 
 <script>
 import PictureCard from "@/components/PictureCard.vue";
+import PictureModal from "@/components/PictureModal.vue"
 import store from "@/store/index";
 export default {
   name: "Pictures",
   components: {
     PictureCard,
+    PictureModal,
   },
   data() {
     return {
       showPictureCard: 2,
+      showingPictureModal: false,
     };
   },
   computed: {
@@ -49,6 +60,18 @@ export default {
   //           this.showPictureCard = 2;
   //       }
   //   },
+  methods:{
+      showPictureModal(){
+          this.showingPictureModal = true;
+      },
+      closePictureModal(){
+          this.showingPictureModal = false;
+      },
+      close(){
+          console.log("closingggg");
+          this.$emit("close")
+      }
+  },
   props: {
     msg: String,
   },

@@ -25,11 +25,12 @@
      
     </div>
       <div class="buttom">
-   
-    <button @click="showImage(0)" ><img src="@/assets/paitt.jpg" width="100" height="100"></button>
-    <button @click="showImage(1)" ><img src="@/assets/picture.jpg" width="100" height="100"></button>
-    <button @click="showImage(2)" ><img src="@/assets/paitt.jpg" width="100" height="100"></button>
-    <button @click="showImage(3)" ><img src="@/assets/picture.jpg" width="100" height="100"></button>
+           <button @click="back()" style="font-size:32px"><i class="material-icons">keyboard_arrow_left</i></button>
+    <button @click="showImage(0)" ><img  src="@/assets/paitt.jpg" width="100" height="100"></button>
+    <button @click="showImage(1)" ><img  src="@/assets/picture.jpg" width="100" height="100"></button>
+    <button @click="showImage(2)" ><img  src="@/assets/paitt.jpg" width="100" height="100"></button>
+    <button @click="showImage(3)" ><img  src="@/assets/picture.jpg" width="100" height="100"></button>
+      <button @click="next()" style="font-size:32px"> <i class="material-icons">keyboard_arrow_right</i></button>
     </div>
 
 
@@ -107,5 +108,11 @@ export default {
     border: none;
     
     
+}
+.buttom{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
 }
 </style>
