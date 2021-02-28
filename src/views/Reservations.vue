@@ -1,15 +1,7 @@
 <template>
   <div class="reservation-container">
          
-      <link
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet"
-      />
-      <button>
-         <router-link :to="{ name: 'Home'}">
-        <i class="material-icons" style="font-size: 48px">&#xe88a;</i>
-        </router-link>
-      </button>
+    
       <h1>Reservation</h1>
     
   </div>

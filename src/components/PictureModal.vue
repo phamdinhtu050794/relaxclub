@@ -2,7 +2,7 @@
   <div v-if="showPictureModal" class="modal-container">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <div>
-          <img src="@/assets/picture.jpg" alt="">
+          <img :src="src" alt="">
       </div>
     <div>{{name}} </div>
     <div> {{describe}} </div>
@@ -25,6 +25,7 @@ export default {
     name: String,
     price: String,
     describe: String,
+    src: String
   },
   methods:{
       showAlert(){

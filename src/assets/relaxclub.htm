@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://localhost:8080/#/painting -->
+<html lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="http://localhost:8080/favicon.ico">
+    <title>relaxclub</title>
+  <link href="./relaxclub_files/app.js" rel="preload" as="script"><link href="./relaxclub_files/chunk-vendors.js" rel="preload" as="script"><style type="text/css">* {
+  margin: 0;
+  padding: 0;
+}
+#home-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 50px;
+  border: none;
+}
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+#nav {
+  padding: 30px;
+}
+#nav a {
+    font-weight: bold;
+    color: #2c3e50;
+}
+#nav a.router-link-exact-active {
+      color: #42b983;
+}
+</style><style type="text/css">.home-container[data-v-8b0610c8] {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  background: #ffef00;
+  background: radial-gradient(circle, #ffef00 0%, #feff14 35%, red 100%);
+}
+.logo[data-v-8b0610c8] {
+  width: 300px;
+  height: 100px;
+  border-radius: 50px 50px 50px 50px;
+  background-color: black;
+  margin: auto;
+  top: 50%;
+}
+.logo h1[data-v-8b0610c8] {
+  color: white;
+  font-size: 50px;
+  height: 30vh;
+}
+.slide[data-v-8b0610c8] {
+  height: 40vh;
+}
+.select[data-v-8b0610c8] {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 30vh;
+  background-color: white;
+}
+.stacked[data-v-8b0610c8] {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  justify-content: space-around;
+}
+.router-link[data-v-8b0610c8] {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: space-around;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.5em;
+  background: #505050;
+  background: linear-gradient(0deg, #505050 0%, #d1d1d1 8%, #e2e2e2 10%, white 15%, white 100%);
+  border: 1px solid black;
+}
+.fade-enter-active[data-v-8b0610c8], .fade-leave-active[data-v-8b0610c8] {
+  transition: opacity 3s;
+}
+.fade-enter[data-v-8b0610c8], .fade-leave-to[data-v-8b0610c8] {
+  opacity: 0;
+}
+</style><style type="text/css">.foods-container[data-v-f694d470] {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+</style><style type="text/css">.drink-container[data-v-6b140ad2] {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.contents[data-v-6b140ad2] {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+</style><style type="text/css">.main-container[data-v-2e230939] {
+  width: 100vw;
+  height: 100vh;
+}
+.left[data-v-2e230939] {
+  float: left;
+  width: 100vw;
+  height: 100vh;
+  shape-outside: polygon(0 0, 0 100%, 50% 50%);
+  opacity: 0.2;
+  background-color: green;
+}
+.food-container[data-v-2e230939] {
+  text-align: start;
+  background-color: red;
+  height: 50vh;
+}
+.food-items[data-v-2e230939] {
+  flex-direction: column;
+  text-align: start;
+}
+.drinks-container[data-v-2e230939] {
+  background-color: pink;
+  height: 50vh;
+  text-align: start;
+}
+</style><style type="text/css">.modal-container[data-v-7a6bf0ff] {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: khaki;
+  margin: 0px auto;
+  border: 1px solid white;
+  border-radius: 0px 50px;
+}
+</style><style type="text/css">.picture-container[data-v-062732ef] {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.header[data-v-062732ef] {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.header h1[data-v-062732ef] {
+  margin: auto;
+  color: black;
+  font-size: 50px;
+}
+.list-container[data-v-062732ef] {
+  display: flex;
+  flex-direction: row;
+  min-width: 0px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0px auto;
+  overflow: visible;
+  padding: 30px;
+  justify-content: space-between;
+}
+.list-item[data-v-062732ef] {
+  display: flex;
+  min-width: 0px;
+  flex: 0 10 30%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.img[data-v-062732ef] {
+  background-size: cover;
+  background-position: center;
+}
+@media only screen and (max-width: 600px) {
+.list-container[data-v-062732ef] {
+    flex-direction: column;
+}
+.list-container .list-item[data-v-062732ef] {
+    width: 50%;
+    margin: 0 auto;
+}
+}
+@media only screen and (max-width: 480px) {
+.list-container .list-item[data-v-062732ef] {
+    width: 100%;
+}
+}
+</style><style type="text/css">.pain-container[data-v-561fd436] {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.header[data-v-561fd436] {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.header h1[data-v-561fd436] {
+  color: red;
+}
+.header button[data-v-561fd436] {
+  border: none;
+  text-align: start;
+}
+.left-right[data-v-561fd436] {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.left-right button[data-v-561fd436] {
+  width: auto;
+  height: 50px;
+  margin-top: 10%;
+  background-color: white;
+  border: none;
+}
+.all-buttons[data-v-561fd436] {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.select-buttons-container[data-v-561fd436] {
+  display: flex;
+}
+.select-buttons[data-v-561fd436] {
+  height: 50px;
+}
+</style><script charset="utf-8" src="./relaxclub_files/app.9de4a80cb30410de5bbf.hot-update.js"></script><script charset="utf-8" src="./relaxclub_files/app.be2cdc543e690b6ed23b.hot-update.js"></script></head>
+  <body>
+    <noscript>
+      <strong>We're sorry but relaxclub doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"><link href="./relaxclub_files/icon" rel="stylesheet"><button id="home-btn"><a href="http://localhost:8080/#/" class="router-link-active"><i class="material-icons" style="font-size: 48px;"></i></a></button><div data-v-561fd436="" class="pain-container"><div data-v-561fd436="" class="header"><h1 data-v-561fd436="">Pictures</h1></div><div data-v-561fd436="" class="left-right"><button data-v-561fd436="" style="font-size: 32px;"><i data-v-561fd436="" class="material-icons">keyboard_arrow_left</i></button><div data-v-561fd436="" class="slide"><img data-v-561fd436="" src="./relaxclub_files/p0.478fcf5e.jpg" width="900" height="500"></div><div data-v-561fd436="" class="slide"><!----></div><div data-v-561fd436="" class="slide"><!----></div><div data-v-561fd436="" class="slide"><!----></div><div data-v-561fd436="" class="slide"><!----></div><div data-v-561fd436="" class="slide"><!----></div><div data-v-561fd436="" class="slide"><!----></div><div data-v-561fd436="" class="slide"><!----></div><div data-v-561fd436="" class="slide"><!----></div><link data-v-561fd436="" href="./relaxclub_files/icon" rel="stylesheet"><button data-v-561fd436="" style="font-size: 32px;"><i data-v-561fd436="" class="material-icons">keyboard_arrow_right</i></button></div><div data-v-561fd436="" class="all-buttons"><button data-v-561fd436="" style="font-size: 32px;"><i data-v-561fd436="" class="material-icons">keyboard_arrow_left</i></button><div data-v-561fd436="" class="select-buttons-container"><div data-v-561fd436=""><button data-v-561fd436="" class="select-buttons"><img data-v-561fd436="" src="./relaxclub_files/p0.478fcf5e.jpg" width="100" height="100"></button></div><div data-v-561fd436=""><button data-v-561fd436="" class="select-buttons"><img data-v-561fd436="" src="./relaxclub_files/p1.5a1bb288.jpg" width="100" height="100"></button></div><div data-v-561fd436=""><button data-v-561fd436="" class="select-buttons"><img data-v-561fd436="" src="./relaxclub_files/p2.21df3651.jpg" width="100" height="100"></button></div><div data-v-561fd436=""><button data-v-561fd436="" class="select-buttons"><img data-v-561fd436="" src="./relaxclub_files/p3.373d268e.jpg" width="100" height="100"></button></div><div data-v-561fd436=""><button data-v-561fd436="" class="select-buttons"><img data-v-561fd436="" src="./relaxclub_files/p4.2f825c48.jpg" width="100" height="100"></button></div><div data-v-561fd436=""><button data-v-561fd436="" class="select-buttons"><img data-v-561fd436="" src="./relaxclub_files/p5.3d22de5f.jpg" width="100" height="100"></button></div><div data-v-561fd436=""><button data-v-561fd436="" class="select-buttons"><img data-v-561fd436="" src="./relaxclub_files/p6.2cc1535a.jpg" width="100" height="100"></button></div><div data-v-561fd436=""><button data-v-561fd436="" class="select-buttons"><img data-v-561fd436="" src="./relaxclub_files/p7.ad5784ae.jpg" width="100" height="100"></button></div><div data-v-561fd436=""><button data-v-561fd436="" class="select-buttons"><img data-v-561fd436="" src="./relaxclub_files/p8.be5b0115.jpg" width="100" height="100"></button></div></div><button data-v-561fd436="" style="font-size: 32px;"><i data-v-561fd436="" class="material-icons">keyboard_arrow_right</i></button></div></div></div>
+    <!-- built files will be auto injected -->
+  <script type="text/javascript" src="./relaxclub_files/chunk-vendors.js"></script><script type="text/javascript" src="./relaxclub_files/app.js"></script>
+
+</body></html>
