@@ -1,5 +1,5 @@
 <template>
-  <div class="drink-container">
+  <div class="container">
       <div>{{name}} </div>
       <div class="contents">
           {{name_content1}} -
@@ -25,14 +25,17 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.drink-container{
+.container{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    height: auto;
+    width: auto;
+    text-align: center;
 }
-.contents{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
+// .contents{
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-around;
+// }
 </style>

@@ -6,7 +6,7 @@
     </div>
     <div class="slide">
       <transition mode="out-in" :duration="3000" name="fade">
-        <img v-if="loaded" :src="getImg(showImage)" width="400" height="300" />
+        <img v-if="loaded" :src="getImg(showImage)" width="auto" height="300" />
       </transition>
 
       <!-- <transition mode="out-in" :duration="3000" name="fade">
@@ -86,10 +86,17 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
-  background: rgb(255,239,0);
-background: radial-gradient(circle, rgba(255,239,0,1) 0%, rgba(254,255,20,1) 35%, rgba(255,0,0,1) 100%);
+//   background: rgb(255,239,0);
+// background: radial-gradient(circle, rgba(255,239,0,1) 0%, rgba(254,255,20,1) 35%, rgba(255,0,0,1) 100%);
  
   // opacity: .1;
+
+//   background: rgb(235,238,217);
+// background: radial-gradient(circle, rgba(235,238,217,1) 10%, rgba(80,76,74,1) 100%);
+
+
+background: rgb(154,156,147);
+background: radial-gradient(circle, rgba(154,156,147,1) 10%, rgba(3,2,2,1) 100%);
 }
 .logo{
  
@@ -137,10 +144,14 @@ background: radial-gradient(circle, rgba(255,239,0,1) 0%, rgba(254,255,20,1) 35%
     align-items: center; 
   text-decoration: none;
   font-size: 1.5em;
- background: rgb(80,80,80);
-background: linear-gradient(0deg, rgba(80,80,80,1) 0%, rgba(209,209,209,1) 8%, rgba(226,226,226,1) 10%, rgba(255,255,255,1) 15%, rgba(255,255,255,1) 100%);
+//  background: rgb(80,80,80);
+// background: linear-gradient(0deg, rgba(80,80,80,1) 0%, rgba(209,209,209,1) 8%, rgba(226,226,226,1) 10%, rgba(255,255,255,1) 15%, rgba(255,255,255,1) 100%);
 
     border: 1px solid black;
+color: black;
+
+    background: rgb(238,238,217);
+background: radial-gradient(circle, rgba(238,238,217,1) 10%, rgba(80,76,74,1) 100%);
 }
 
 

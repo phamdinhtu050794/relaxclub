@@ -1,17 +1,18 @@
 <template>
   <div class="calendar-container" v-cloak>
       <!-- <ds-calendar></ds-calendar> -->
-        <!-- <ds-calendar-app :calendar="calendar"></ds-calendar-app> -->
+      
+        <ds-calendar-app class="calendar-contents" :calendar="calendar"></ds-calendar-app>
   </div>
 </template>
 
 <script>
-// import { Calendar } from 'dayspan';
+import { Calendar } from 'dayspan';
 export default {
   name: "Calendar",
-//   data: () => ({
-//     calendar: Calendar.months()
-//   }),
+  data: () => ({
+    calendar: Calendar.months()
+  }),
   props: {
     msg: String,
   },
@@ -22,7 +23,9 @@ export default {
 <style scoped lang="scss">
 .calendar-container{
     font-family: Roboto, sans-serif;
-  width: 100%;
-  height: 100%;
-}
+  width: 100vw;
+  height: 100vh;
+  }
+
+
 </style>

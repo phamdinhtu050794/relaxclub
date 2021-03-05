@@ -111,6 +111,12 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  // background-color:black;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 2%, rgba(0,212,255,1) 51%, rgba(7,7,41,1) 95%);
 }
 .header {
   display: flex;
@@ -136,7 +142,8 @@ export default {
   width: auto;
   height: 50px;
   margin-top: 10%;
-  background-color: white;
+  background-color: black;
+  color: white;
   border: none;
 }
 .all-buttons {

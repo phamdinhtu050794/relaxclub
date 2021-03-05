@@ -21,9 +21,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .foods-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: space-around;
+    // text-align: start;
 }
 // .leftt {
 //   float: left;

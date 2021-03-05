@@ -9,12 +9,14 @@
         <PictureCard
           v-if="item.avaliable"
           @click.native="showPictureModal"
-          :name="item.name"
-          :price="item.price"
+          
           :src="item.src"
         ></PictureCard>
+        <!-- :name="item.name"
+          :price="item.price" -->
       </div>
       <PictureModal
+      
         v-if="showingPictureModal"
         v-on:close="closePictureModal"
         :name="picture[showPictureCard].name"
@@ -39,7 +41,7 @@ export default {
   data() {
     return {
       showPictureCard: 2,
-      showingPictureModal: false,
+      showingPictureModal: true,
     };
   },
   computed: {
@@ -69,7 +71,8 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-
+background: rgb(6,6,0);
+background: radial-gradient(circle, rgba(6,6,0,1) 10%, rgba(194,177,169,1) 100%);
   // flex-wrap: wrap;
 }
 .header {

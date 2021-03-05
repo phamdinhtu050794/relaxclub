@@ -1,14 +1,25 @@
 <template>
   <div v-if="showPictureModal" class="modal-container">
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <div>
-          <img :src="src" alt="">
-      </div>
-    <div>{{name}} </div>
-    <div> {{describe}} </div>
-    <div> {{price}} </div>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <div>
-        <button  @click="close" ><i class="material-icons">&#xe14c;</i></button>
+      <img
+        v-if="loaded"
+        :src="getImg(src)"
+        @load="load()"
+        width="auto"
+        height="400"
+      />
+    </div>
+    <div class="contents">
+      <div class="name"> <h2>Painting Name :</h2> {{ name }}</div>
+      <div class="describe"> <h2>Describe : </h2> {{ describe }}</div>
+      <div class="price"> <h2>Price : </h2> {{ price }}</div>
+    </div>
+    <div class="btn">
+      <button @click="close"><i class="material-icons">&#xe14c;</i></button>
     </div>
   </div>
 </template>
@@ -16,27 +27,36 @@
 <script>
 export default {
   name: "PictureModal",
-  data(){
-      return{
-          showPictureModal : true,
-      }
+  data() {
+    return {
+      showPictureModal: true,
+      loaded: true,
+    };
   },
   props: {
     name: String,
     price: String,
     describe: String,
-    src: String
+    src: String,
   },
-  methods:{
-      showAlert(){
-          this.showPictureModal = !this.showPictureModal;
-
-      },
-       close() {
-      console.log("closing")
+  methods: {
+    showAlert() {
+      this.showPictureModal = !this.showPictureModal;
+    },
+    close() {
+      console.log("closing");
       this.$emit("close");
     },
-  }
+    getImg(img) {
+      // console.log("getting images: " + img)
+      var url = require("@/assets/" + img + ".jpg");
+      return url;
+    },
+    load() {
+      console.log("loading!!!!!!");
+      this.loaded = true;
+    },
+  },
 };
 </script>
 
@@ -53,14 +73,32 @@ export default {
 
   width: 100vw;
   height: 100vh;
-  background-color: khaki;
-  
+  // background-color:yellow;
+
   margin: 0px auto;
 
   border: 1px solid white;
-  
 
-  border-radius: 0px 50px;
-  
+  // border-radius: 0;
+  text-align: center;
+  overflow: hidden;
+  background: rgb(244,236,17);
+background: radial-gradient(circle, rgba(244,236,17,1) 10%, rgba(252,135,70,1) 100%);
+}
+.contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: start;
+  margin-left: 30%;
+}
+
+.btn{
+ width: 50px;
+  border: 1px solid black;
+  background-color: red;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 </style>
