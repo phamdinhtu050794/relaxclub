@@ -1,18 +1,17 @@
 <template>
   <div class="pain-container">
     <div class="header">
-      <h1>Pictures</h1>
+      <h1>RelaxClub Pictures</h1>
     </div>
     <div class="left-right">
-      <button @click="back()" style="font-size: 32px">
+      <button @click="back()" style="font-size: 48px">
         <i class="material-icons">keyboard_arrow_left</i>
       </button>
       <div v-for="item in paintings" :key="item.key" class="slide">
         <img
           v-if="img == item.src"
           :src="getImg(item.src)"
-          width="900"
-          height="500"
+         
         />
       </div>
 
@@ -21,14 +20,14 @@
         rel="stylesheet"
       />
 
-      <button @click="next()" style="font-size: 32px">
+      <button @click="next()" style="font-size: 48px">
         <i class="material-icons">keyboard_arrow_right</i>
       </button>
     </div>
     <div class="all-buttons">
-      <button @click="back()" style="font-size: 32px">
+      <!-- <button @click="back()" style="font-size: 48px">
         <i class="material-icons">keyboard_arrow_left</i>
-      </button>
+      </button> -->
 
       <div class="select-buttons-container">
         <div v-for="item in paintings" :key="item.key">
@@ -36,24 +35,11 @@
             <img :src="getImg(item.src)" class="select-buttons" />
           </button>
         </div>
-
-        <!-- <button @click="showImage(0)">
-          <img src="@/assets/paitt.jpg" width="100" height="100" />
-        </button>
-        <button @click="showImage(1)">
-          <img src="@/assets/picture.jpg" width="100" height="100" />
-        </button>
-        <button @click="showImage(2)">
-          <img src="@/assets/paitt.jpg" width="100" height="100" />
-        </button>
-        <button @click="showImage(3)">
-          <img src="@/assets/picture.jpg" width="100" height="100" />
-        </button> -->
       </div>
 
-      <button @click="next()" style="font-size: 32px">
+      <!-- <button @click="next()" style="font-size: 48px">
         <i class="material-icons">keyboard_arrow_right</i>
-      </button>
+      </button> -->
     </div>
   </div>
 </template>
@@ -81,13 +67,13 @@ export default {
     back() {
       this.imgNum -= 1;
       if (this.imgNum < 0) {
-        this.imgNum = 8;
+        this.imgNum = 11;
       }
       console.log("back ");
     },
     next() {
       this.imgNum += 1;
-      if (this.imgNum > 8) {
+      if (this.imgNum > 11) {
         this.imgNum = 0;
       }
       console.log("netx");
@@ -112,11 +98,12 @@ export default {
   flex-direction: column;
   justify-content: space-around;
   // background-color:black;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 2%, rgba(0,212,255,1) 51%, rgba(7,7,41,1) 95%);
+  background-color: rgb(70, 70, 70);
+//   background: rgb(2,0,36);
+// background: linear-gradient(90deg, rgba(2,0,36,1) 2%, rgba(0,212,255,1) 51%, rgba(7,7,41,1) 95%);
 }
 .header {
   display: flex;
@@ -125,8 +112,8 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 2%, rgba(0,212,255,1) 51%, rgb
 }
 .header h1 {
   //    margin-left: 35%;
-  color: red;
-  //    font-size: 50px;
+  color: black;
+     font-size: 50px;
 }
 .header button {
   // height: 50px;
@@ -137,25 +124,94 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 2%, rgba(0,212,255,1) 51%, rgb
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
 .left-right button {
-  width: auto;
-  height: 50px;
-  margin-top: 10%;
-  background-color: black;
+ 
+  // background-color: black;
+  
   color: white;
   border: none;
+}
+.left-right i{
+  font-size: 48px;
 }
 .all-buttons {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
+  overflow: scroll;
+  // width: 70vw;
 }
 .select-buttons-container{
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
 }
 .select-buttons{
-  height: 100px;
+  display: flex;
+  flex-direction: row;
+  height: 12vh;
+  
+  // margin: 2%;
+  // height: 100px;
   // width: auto;
+  
+}
+.select-buttons img{
+   border-radius: 4px;
+  padding: 5px;
+}
+
+.slide img{
+  width: auto;
+  height: 50vh;
+
+  // border: 1px solid #ddd;
+  // border-radius: 4px;
+  // padding: 5px;
+  // width: 90vw;
+}
+
+@media only screen and (max-width: 480px) {
+
+.pain-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.pain-container h1{
+  padding-top: 10%;
+}
+.slide img{
+  width: 80vw;
+  height: 50vh;
+
+  // border: 1px solid #ddd;
+  // border-radius: 4px;
+  // padding: 5px;
+  // width: 90vw;
+}
+.all-buttons{
+   border-radius: 4px;
+  padding: 5px;
+// padding: 2%;
+  // overflow: scroll;
+}
+.select-buttons-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  width: 100vw;
+  overflow: scroll;
+  padding: 2%;
+}
+
+
+  
 }
 </style>

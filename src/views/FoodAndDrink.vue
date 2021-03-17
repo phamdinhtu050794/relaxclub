@@ -1,54 +1,28 @@
 <template>
   <div class="main-container">
-    <div class="food-container">
-      <div class="left"></div>
-      <h1>Food</h1>
-      <div v-for="item in foods" :key="item.key" class="food-items">
-        <FoodContents
-          v-if="item.avaliable"
-          :name="item.name"
-          :price="item.price"
-        ></FoodContents>
-      </div>
+    <!-- <img src="@/assets/logorelax.jpg" alt=""> -->
+    <!-- <video playsinline autoplay muted loop id="myvideo" >
+      <source src="@/assets/beer.mp4" type="video/mp4">
+    </video> -->
+    <div><h1>RelaxClub Menu</h1></div>
+    <div class="food-drink">
+    <food-container class="food" :foods="foods" />
+    <hr>
+    <drink-container class="drink" :drinks="drinks" />
     </div>
-
-    <div class="drinks-container">
-            <!-- <div class="right"></div> -->
-      <div class="drink-contents">
-        <h1>Drinks</h1>
-
-        <div v-for="item in drinks" :key="item.key" class="drink-items"  >
-          <DrinkContents
-            v-if="item.avaliable"
-            :name="item.name"
-            :name_content1="item.name_content1"
-            :name_content2="item.name_content2"
-            :name_content3="item.name_content3"
-          >
-          </DrinkContents>
-        </div>
-        
-        
-      </div>
-         
-        <div class="right"></div>
-      <!-- </div> -->
-      
-    </div>
-    
   </div>
 </template>
 
 <script>
-import FoodContents from "../components/FoodContents.vue";
-import DrinkContents from "../components/DrinkContents.vue";
+import FoodContainer from "../components/FoodContainer.vue";
+import DrinkContainer from "../components/DrinkContainer.vue";
 import store from "@/store/index";
 
 export default {
   name: "FoodAndDrink",
   components: {
-    FoodContents,
-    DrinkContents,
+    FoodContainer,
+    DrinkContainer,
   },
   data() {
     return {};
@@ -71,123 +45,83 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.main-container {
+* {
+  box-sizing: border-box;
+}
+hr{
+  color:rgb(141, 0, 0);;
+}
+.main-container{
   display: flex;
   flex-direction: column;
-//   justify-content: flex-start;
-//   overflow: hidden;
-  width: 100vw;
-  height: 100vh;
+  justify-content: flex-start;
+  background: rgb(198,143,18);
+background: linear-gradient(90deg, rgba(198,143,18,1) 0%, rgba(227,205,96,1) 49%, rgba(215,159,9,1) 83%);
+}
+.main-container h1{
+  
+  color: rgb(65, 64, 64);
+}
+.food-drink{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
+  
+  padding-top: 5%;
+  // padding-left: 10%;
+}
+.food{
+  // background-color: red;
+}
+.drink{
+  // background-color: green;
 }
 
-.food-container {
-  height: 50vh;
-  overflow: scroll;
+
+@media only screen and (max-width: 800px) {
+  .food-drink {
+    display: flex;
+    flex-direction: column;
+    // padding-left: 20%;
+    text-align: center;
+    // margin-left: 7%;
+  }
+  hr{
+    color: brown;
+  }
+  // .food{
+  //   padding-left: 20%;
+  // }
+  
 }
-.food-container h1 {
-  text-align: start;
-}
-.left {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  -webkit-shape-outside: polygon(5% 0, 40% 100%, 5% 100%);
-  shape-outside: polygon(5% 0, 40% 100%, 5% 100%);
-  float: left;
-  -webkit-clip-path: polygon(5% 0, 40% 100%, 5% 100%);
-  clip-path: polygon(5% 0, 40% 100%, 5% 100%);
-}
-.food-items {
-  width: 50vw;
+
+@media only screen and (max-width: 480px) {
+
+.main-container{
   display: flex;
   flex-direction: column;
-//   justify-content: flex-end;
-  text-align: start;
+  justify-content: center;
 }
-.drinks-container {
-  height: 50vh;
-//   width: 100vw;
-  overflow: scroll;
-  display: flex;
-// //   flex-direction: column;
-// //   justify-content: flex-end;
-// //   align-items: flex-start;
-  text-align: right;
-//  height: 50vh;
-// //  width: 100vw;
-//   overflow: scroll;
-  background-color: red;
-}
-.drink-contents{
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: flex-end;
-    text-align: start;
-    overflow: scroll;
-}
-.drinks-container h1{
-     text-align: right;
-}
-// .drink-contents {
-   
-//     text-align: start;
-//     background-color: blue;
 
-// }
+  .food-drink {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    // text-align: center;
+    // margin-left: 30%;
+    
+
+  }
+  hr{
+    color: brown;
+  }
+ 
+}
+@media only screen and (max-width: 480px){
+  
+  
+}
 
 
- .drink-items {
-    // position: absolute;
-  width: auto;
-//   height: auto;
-   display: block;
-//   -webkit-flex-direction: column;
-//    flex-direction: column;
-//   justify-content: flex-start;
-//   align-items: flex-start;
-//   flex-flow: wrap;
-//   float: left;
-//   height: -20vh;
-//   display: inline;
-  flex-direction: column;
-  justify-content: flex-end;
-// display: block;
-  text-align: end;
-// align-items: flex-end;
-//   flex-wrap: wrap;
-  background-color:yellow;
-    // margin-top: 50%;
-    // margin: 0 auto;
-}
-.right {
-    // margin-bottom: 0%;
-    // top: 0%;
-//     // position: absolute;
-//   display: flex;
-//   text-align: start;
-//   float: right;
-// display: block;
-  width: 100vw;
-  height: 100vh;
-  -webkit-shape-outside: polygon(100% 0%, 100% 100%, 0 100%);
-  shape-outside: polygon(100% 0%, 100% 100%, 0 100%);
-  float: right;
-  -webkit-clip-path: polygon(100% 0%, 100% 100%, 0 100%);
-  clip-path: polygon(100% 0%, 100% 100%, 0 100%);
-  background-color: green;
-
-
-// display: flex;
-//   width: 100vw;
-//   height: 100vh;
-//   -webkit-shape-outside: polygon(5% 0, 40% 100%, 5% 100%);
-//   shape-outside: polygon(5% 0, 40% 100%, 5% 100%);
-//   float: left;
-//   -webkit-clip-path: polygon(5% 0, 40% 100%, 5% 100%);
-//   clip-path: polygon(5% 0, 40% 100%, 5% 100%);
-//   background-color: green;
-}
 </style>

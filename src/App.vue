@@ -11,7 +11,7 @@
 
       <button v-if="this.$route.name != 'RelaxClub'" id="home-btn">
          <router-link :to="{ name: 'RelaxClub'}">
-        <i class="material-icons" style="font-size: 48px">&#xe88a;</i>
+        <i class="material-icons" style="font-size: 48px;color:black">&#xe88a;</i>
         </router-link>
       </button>
     <!-- <div id="nav">
@@ -21,6 +21,22 @@
     <router-view/>
   </div>
 </template>
+<script>
+export default {
+  name: "App",
+
+  mounted(){
+    // console.log("my main app mounted " );
+    // console.log(window.innerHeight);
+    // console.log(window.outerHeight);
+
+    var app = document.querySelector('#app');
+    app.style.height = window.innerHeight + "px";
+  }
+
+
+}
+</script>
 
 <style lang="scss">
 * {
@@ -29,10 +45,11 @@
 }
 #home-btn{
   position: absolute;
-  top: 20px; 
-  left: 20px;
+  top: 0; 
+  left: 10px;
     height: 50px;
     border: none;
+    
 }
 
 #app {
@@ -55,4 +72,6 @@
     }
   }
 }
+
+
 </style>

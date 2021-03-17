@@ -1,12 +1,13 @@
 <template>
   <div class="home-container">
     <div class="logo">
-      <h1>RelaxClub</h1>
+      <!-- <h1>RelaxClub</h1> -->
       <!-- <img src="@/assets/logorelax.jpg" width="200" height="200"> -->
+      <Mouse3DMove></Mouse3DMove>
     </div>
     <div class="slide">
       <transition mode="out-in" :duration="3000" name="fade">
-        <img v-if="loaded" :src="getImg(showImage)" width="auto" height="300" />
+        <img v-if="loaded" :src="getImg(showImage)" width="" height="80%" />
       </transition>
 
       <!-- <transition mode="out-in" :duration="3000" name="fade">
@@ -37,11 +38,18 @@
 
 <script>
 
+import Mouse3DMove from '@/components/Mouse3DMove.vue'
 
 export default {
   name: "RelaxClub",
+
+components:{
+  Mouse3DMove
+},
+
   mounted() {
     setInterval(this.switchImage, 3000);
+
   },
   data: () => {
     return {
@@ -84,8 +92,8 @@ export default {
 .home-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
+  justify-content: space-around;
+  height: 100%;
 //   background: rgb(255,239,0);
 // background: radial-gradient(circle, rgba(255,239,0,1) 0%, rgba(254,255,20,1) 35%, rgba(255,0,0,1) 100%);
  
@@ -100,12 +108,12 @@ background: radial-gradient(circle, rgba(154,156,147,1) 10%, rgba(3,2,2,1) 100%)
 }
 .logo{
  
-  width: 300px;
-  height: 100px;
+  // width: 300px;
+  // height: 100px;
   border-radius: 50px 50px 50px 50px ;
-  background-color:black;
+  // background-color:black;
   margin: auto;
-  top: 50%;
+  top: 0;
   //  background:radial-gradient(ellipse 50px 30px,lightgreen ,darkgreen);
   // position: relative;
   
@@ -117,14 +125,35 @@ background: radial-gradient(circle, rgba(154,156,147,1) 10%, rgba(3,2,2,1) 100%)
   height: 30vh;
 }
 .slide{
-  height: 40vh;
+  // display: block;
+  // max-width:230px;
+  // max-height:95px;
+  // width: auto;
+  // height: auto;
+
+height: 60vh;
+padding-top: 5%;
+  // display: block;
+  // text-align: center;
+  // max-width: 238px;
+  
+  // padding: 5%;
+
+  // padding-top: 10%;
+
+}
+.slide img{
+  // width: 60vw;
+  // display: flex;
+  // justify-content: center;
+  padding-top: 5%;
 }
 .select {
   display: flex; 
     flex-direction: row; 
     justify-content: space-around; 
     
-    height: 30vh; 
+    height: 15vh; 
 
     background-color: white; 
 }
@@ -143,7 +172,7 @@ background: radial-gradient(circle, rgba(154,156,147,1) 10%, rgba(3,2,2,1) 100%)
     justify-content: space-around; 
     align-items: center; 
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1.2em;
 //  background: rgb(80,80,80);
 // background: linear-gradient(0deg, rgba(80,80,80,1) 0%, rgba(209,209,209,1) 8%, rgba(226,226,226,1) 10%, rgba(255,255,255,1) 15%, rgba(255,255,255,1) 100%);
 
@@ -160,6 +189,16 @@ background: radial-gradient(circle, rgba(238,238,217,1) 10%, rgba(80,76,74,1) 10
 }
 .fade-enter, .fade-leave-to {
   opacity: 0; 
+}
+
+
+@media only screen and (max-width: 480px){
+ img {
+  // border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 90vw;
+}
 }
 
 </style>

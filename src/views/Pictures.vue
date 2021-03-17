@@ -3,18 +3,25 @@
     <div class="header">
       <h1>Paintings Shop</h1>
     </div>
-    <div class="img"><img src="@/assets/0.jpg" width="500" /></div>
+    <div class="img">
+      <img src="@/assets/p12.jpg" 
+      
+      width="400px"
+      height=""
+    /></div>
     <div class="list-container">
       <div v-for="item in picture" :key="item.key" class="list-item">
         <PictureCard
           v-if="item.avaliable"
-          @click.native="showPictureModal"
+          @click.native="showPictureModal(item.key)"
           
           :src="item.src"
         ></PictureCard>
         <!-- :name="item.name"
           :price="item.price" -->
       </div>
+
+      <transition name="fade">
       <PictureModal
       
         v-if="showingPictureModal"
@@ -24,6 +31,7 @@
         :describe="picture[showPictureCard].describe"
         :src="picture[showPictureCard].src"
       ></PictureModal>
+      </transition>
     </div>
   </div>
 </template>
@@ -41,7 +49,7 @@ export default {
   data() {
     return {
       showPictureCard: 2,
-      showingPictureModal: true,
+      showingPictureModal: false,
     };
   },
   computed: {
@@ -51,7 +59,9 @@ export default {
     },
   },
   methods: {
-    showPictureModal() {
+    showPictureModal(picKey) {
+      console.log("picKey: " + picKey);
+      this.showPictureCard = picKey;
       this.showingPictureModal = true;
     },
     closePictureModal() {
@@ -71,71 +81,95 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+margin: 0;
 background: rgb(6,6,0);
 background: radial-gradient(circle, rgba(6,6,0,1) 10%, rgba(194,177,169,1) 100%);
   // flex-wrap: wrap;
+  overflow: hidden;
 }
+
+.img{
+   
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-left: 25%;
+   border: 2px solid gray;
+  border-radius:  15px; 
+  padding: 3%;
+  width: 50vw;
+  background-color:black;
+ 
+  
+  // padding: 2%;
+
+}
+
 .header {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  
 }
 .header h1 {
   margin: auto;
   color: black;
-  font-size: 50px;
+  font-size: 42px;
 }
-// .header button{
-//     height: 50px;
-//     border: none;
-// }
+
 .list-container {
   display: flex;
   flex-direction: row;
-  min-width: 0px;
+  justify-content: space-around;
   flex-wrap: wrap;
-  width: 100%;
-  margin: 0px auto;
-  overflow: visible;
-  // background-color: yellow;
-  padding: 30px;
-  justify-content: space-between;
+  // padding-bottom: 2%;
 }
 .list-item {
   display: flex;
-  min-width: 0px;
-  flex: 0 10 30%;
-  // margin: 5px;
-  // background-color: purple;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  overflow: hidden;
-  // order: 3;
-  // flex-grow: 1;
-}
-// @media only screen and (max-width:1024px) and (min-width: 641px) and (min-width: 320px) {
+  flex-direction: row;
+  justify-content: space-around;
+  // width: 30vw;
+  // flex: 1 1 30%;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 5px;
+  background-color:black;
+  margin-bottom: 3%;
+  
 
-// }
-.img {
-  //  height: 100vh;
-  // width: 100vw;
-  background-size: cover;
-  background-position: center;
+  
+ 
 }
 
-@media only screen and (max-width: 600px) {
-  .list-container {
-    flex-direction: column;
-  }
-
-  .list-container .list-item {
-    width: 50%;
-    margin: 0 auto;
-  }
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1s; 
 }
+.fade-enter, .fade-leave-to {
+  opacity: 0; 
+}
+
+
 @media only screen and (max-width: 480px) {
-  .list-container .list-item {
-    width: 100%;
+
+  .picture-container{
+    padding: 2%;
+  }
+  .list-container{
+    border: 1px;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+  }
+
+  .img{
+    border: 2px solid gray;
+   width: 95vw;
+   margin: 0;
+  //  height: 100vh;
+  padding: 2%;
+  
   }
 }
 </style>

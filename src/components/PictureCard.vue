@@ -1,7 +1,7 @@
 <template>
   <div class="card-container">
      <!-- <div> <img :src="getImg(src)" width="400"></div> -->
-     <img v-if="loaded" :src="getImg(src)" @load="load()" width="400" height="300" />
+     <img v-if="loaded" :src="getImg(src)" @load="load()" width="" height="" />
      <div>{{name}} </div>
      <div>{{price}} </div>
   </div>
@@ -37,5 +37,24 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.card-container{
+  display: flex;
+  
 
+}
+.card-container img{
+   border-radius: 25px;
+  padding: 5px;
+  width: 30vw;
+  // height: 30vh;
+}
+@media only screen and (max-width: 480px) {
+
+  .card-container img{
+    border-radius: 5px;
+    width: 90vw;
+    // height: 90vh;
+  }
+  
+}
 </style>

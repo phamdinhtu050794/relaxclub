@@ -9,18 +9,20 @@
         v-if="loaded"
         :src="getImg(src)"
         @load="load()"
-        width="auto"
-        height="400"
+       
       />
     </div>
     <div class="contents">
+      <div class="name-price">
       <div class="name"> <h2>Painting Name :</h2> {{ name }}</div>
+       <div class="price"> <h2>Price : </h2> {{ price }}</div>
+       </div>
       <div class="describe"> <h2>Describe : </h2> {{ describe }}</div>
-      <div class="price"> <h2>Price : </h2> {{ price }}</div>
+     
     </div>
-    <div class="btn">
-      <button @click="close"><i class="material-icons">&#xe14c;</i></button>
-    </div>
+    
+      <button @click="close"><i class="btn material-icons">&#xe14c;</i></button>
+    
   </div>
 </template>
 
@@ -65,40 +67,81 @@ export default {
 .modal-container {
   display: flex;
   flex-direction: column;
-
+  justify-content: space-around;
   position: fixed;
-  z-index: 1;
-  top: 0px;
-  left: 0;
-
-  width: 100vw;
-  height: 100vh;
+  z-index: 0;
+  top: 0;
+  // left: 15%;
+left: 0;
+  width: 100%;
+  height: 100%;
   // background-color:yellow;
 
-  margin: 0px auto;
+  // margin: 0px;
+
+  // margin-top: 5%;
 
   border: 1px solid white;
-
+  align-items: center;
+  // justify-content: space-around;
   // border-radius: 0;
   text-align: center;
   overflow: hidden;
   background: rgb(244,236,17);
 background: radial-gradient(circle, rgba(244,236,17,1) 10%, rgba(252,135,70,1) 100%);
 }
+.modal-container img{
+  width: auto;
+  height: 50vh;
+  border: 2px solid gray;
+  border-radius: 25px;
+  padding: 3%;
+  background-color:black;
+ 
+}
 .contents {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   text-align: start;
-  margin-left: 30%;
+  // margin-left: 30%;
+  width: 70%;
+}
+.price{
+  margin-right: 5%;
 }
 
 .btn{
+display: flex;
+justify-content: center;
+align-items: center;
+
+
  width: 50px;
+ height: 50px;
   border: 1px solid black;
-  background-color: red;
+  background-color:gray;
+  border-radius: 50%;
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: 3%;
+  bottom:3%;
+
+}
+.name-price{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media only screen and ( max-width: 480px) {
+
+  .modal-container img{
+     width:80vw;
+  height: 50vh;
+  border: 2px solid gray;
+  border-radius: 25px;
+  padding: 3%;
+  }
+  
 }
 </style>
