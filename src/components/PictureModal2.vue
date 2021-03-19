@@ -7,21 +7,21 @@
 
     <div class="contents">
       <!-- <div> -->
-        <img v-if="loaded" :src="getImg(src)" @load="load()" />
+        <img v-if="loaded" :src="getImg(picture.src)" @load="load()" />
       <!-- </div> -->
       <div class="name-price">
         <div class="name">
           <h2>Painting Name :</h2>
-          {{ name }}
+          {{ picture.name }}
         </div>
         <div class="price">
           <h2>Price :</h2>
-          {{ price }}
+          {{ picture.price }}
         </div>
       </div>
       <div class="describe">
         <h2>Describe :</h2>
-        {{ describe }}
+        {{ picture.describe }}
       </div>
     </div>
 
@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  name: "PictureModal",
+  name: "PictureModal2",
   data() {
     return {
       showPictureModal: true,
@@ -39,10 +39,13 @@ export default {
     };
   },
   props: {
-    name: String,
-    price: String,
-    describe: String,
-    src: String,
+    picture: Object
+    //  {
+      // name: String,
+      // price: String,
+      // describe: String,
+      // src: String,
+    // }
   },
   methods: {
     showAlert() {

@@ -1,14 +1,15 @@
 <template>
   <div class="mouse3d-container">
     <img
-      @mousemove="mouseMove"
-      @touchmove="touchMove"
-      @mouseleave="mouseLeave"
-      @touchend="touchEnd"
-      src="@/assets/logorelax.jpg"
+     
+      src="@/assets/logonew.png"
       width="300"
       height="200"
     />
+     <!-- @mousemove="mouseMove"
+      @touchmove="touchMove"
+      @mouseleave="mouseLeave"
+      @touchend="touchEnd" -->
 
     <div> 
       <!-- Test: {{x}} , {{y}} -->

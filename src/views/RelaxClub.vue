@@ -154,6 +154,7 @@ padding-top: 5%;
     justify-content: space-around; 
     
     height: 15vh; 
+    min-height: 80px;
 
     background-color: white; 
 }

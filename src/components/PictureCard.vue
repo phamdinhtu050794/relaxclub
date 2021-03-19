@@ -53,6 +53,7 @@ export default {
   .card-container img{
     border-radius: 5px;
     width: 90vw;
+    height: 100%;
     // height: 90vh;
   }
   

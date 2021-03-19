@@ -5,6 +5,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    MainPicture: {key : "9", 
+                  avaliable: true, 
+                  name: "picture 12",
+                  describe:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec nam aliquam sem et tortor. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Semper auctor neque vitae tempus quam pellentesque nec. Dictum at tempor commodo ullamcorper a lacus. Arcu dictum varius duis at consectetur lorem donec. Viverra vitae congue eu consequat ac felis donec.", 
+                  price: "100k", 
+                  src: "p12"},
+      
     Picture:[
       // {key : "0", avaliable: true, name: "picture 1", price: "100k", src: "0"},
      
@@ -17,7 +24,6 @@ export default new Vuex.Store({
       {key : "6", avaliable: true, name: "picture 12",describe:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec nam aliquam sem et tortor. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Semper auctor neque vitae tempus quam pellentesque nec. Dictum at tempor commodo ullamcorper a lacus. Arcu dictum varius duis at consectetur lorem donec. Viverra vitae congue eu consequat ac felis donec.", price: "100k", src: "p5"},
       {key : "7", avaliable: true, name: "picture 13",describe:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec nam aliquam sem et tortor. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Semper auctor neque vitae tempus quam pellentesque nec. Dictum at tempor commodo ullamcorper a lacus. Arcu dictum varius duis at consectetur lorem donec. Viverra vitae congue eu consequat ac felis donec.", price: "100k", src: "p7"},
       {key : "8", avaliable: true, name: "picture 14",describe:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec nam aliquam sem et tortor. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Semper auctor neque vitae tempus quam pellentesque nec. Dictum at tempor commodo ullamcorper a lacus. Arcu dictum varius duis at consectetur lorem donec. Viverra vitae congue eu consequat ac felis donec.", price: "100k", src: "p8"},
-      {key : "9", avaliable: true, name: "picture 12",describe:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec nam aliquam sem et tortor. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Semper auctor neque vitae tempus quam pellentesque nec. Dictum at tempor commodo ullamcorper a lacus. Arcu dictum varius duis at consectetur lorem donec. Viverra vitae congue eu consequat ac felis donec.", price: "100k", src: "p12"},
       {key : "10", avaliable: true, name: "picture 13",describe:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec nam aliquam sem et tortor. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Semper auctor neque vitae tempus quam pellentesque nec. Dictum at tempor commodo ullamcorper a lacus. Arcu dictum varius duis at consectetur lorem donec. Viverra vitae congue eu consequat ac felis donec.", price: "100k", src: "p13"},
       {key : "11", avaliable: true, name: "picture 14",describe:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec nam aliquam sem et tortor. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Semper auctor neque vitae tempus quam pellentesque nec. Dictum at tempor commodo ullamcorper a lacus. Arcu dictum varius duis at consectetur lorem donec. Viverra vitae congue eu consequat ac felis donec.", price: "100k", src: "p14"},
       
