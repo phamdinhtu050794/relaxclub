@@ -5,6 +5,9 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+
+    Lists :{},
+
     MainPicture: {key : "9", 
                   avaliable: true, 
                   name: "picture 12",
@@ -65,11 +68,87 @@ export default new Vuex.Store({
       {key:"6", avaliable:"true",name:"Soft Drink", name_content1:"name contents1", name_content2:"name contents2", name_content3:"name contents3",price1:"50k"}
 
     ]
+
+
+  },
+  getters:{
+    Lists : state => {
+      // test
+      return state.Lists;
+    },
+
+    getListById: (state) => (id) => {
+      // return state.Tasks.find(task => task.ID == id)
+      if( id in state.Lists){
+        console.log("has idddddddddddd");
+        return state.Lists[id];
+      }
+      console.log("does not have id")
+    },
+
+
   },
   mutations: {
+    createList(state, payload){
+      console.log('in vuex mutations createList')
+     
+
+      // state.Tasks[id] = payload;
+      Vue.set(state.Lists, payload.id, payload);
+    },
+    updateList(state, payload){
+      console.log('mutation updateList')
+
+      Vue.set(state.Lists, payload.id, payload);
+    },
+    deleteByListId(state, id){
+      console.log("mutation delete list")
+      Vue.delete(state.Lists, id);
+      // delete state.Tasks[id];
+    },
+    deleteAllLists(state){
+      console.log("muatation delete all list")
+      state.Lists = {};
+    }
+
   },
   actions: {
+    createList(context, payload){
+      // createList.commit('increment')
+      console.log("in vuex action createList")
+
+      var id = Object.keys(context.state.Tasks).length;
+      console.log(id)
+      console.log(payload)
+      payload.id = id;
+
+      console.log(payload)
+      context.commit('createList',payload);
+
+
+      // save to localStorage
+      context.dispatch('saveTasksTo_localStorage', payload)
+
+    },
+    updateList(context, payload){
+
+      console.log("action editlist")
+      context.commit('updateList', payload)
+
+    },
+
+    deleteByListId(context, id){
+
+      console.log("action delete lists")
+      context.commit("deleteByListId" , id)
+
+    },
+    deleteAllLists(context){
+      console.log("action delete all list")
+      context.commit("deleteAllLists")
+    },
+
   },
   modules: {
-  }
+  },
 })

@@ -6,6 +6,9 @@ import Vuetify from 'vuetify'
 import DaySpanVuetify from 'dayspan-vuetify'
 
 
+import * as VueGoogleMaps from 'vue2-google-maps'
+
+
 import moment from 'moment'
 
 import 'vuetify/dist/vuetify.min.css'
@@ -28,6 +31,15 @@ Vue.use(DaySpanVuetify, {
 Vue.prototype.moment = moment
 
 Vue.config.productionTip = false
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyCAG009TKY8e6iPppfH_RclXvjX8uLaebE',
+    // libraries: 'places',
+  },
+ 
+  
+})
 
 new Vue({
   router,

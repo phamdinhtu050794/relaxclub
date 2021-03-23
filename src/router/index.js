@@ -9,6 +9,7 @@ import Reservations from '../views/Reservations.vue'
 import Pictures from '../views/Pictures.vue'
 import Paintings from '../views/Paintings.vue'
 
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -42,7 +43,7 @@ const routes = [
     name: 'Paintings',
     component: Paintings
   },
-
+  
 ]
 
 const router = new VueRouter({
