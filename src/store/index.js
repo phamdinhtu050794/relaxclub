@@ -73,7 +73,6 @@ export default new Vuex.Store({
   },
   getters:{
     Lists : state => {
-      // test
       return state.Lists;
     },
 
